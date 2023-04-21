@@ -1,0 +1,135 @@
+.cabecalho__menu-hamburguer {
+    width: 24px;
+    height: 24px;
+    background-image: url("../img/Menu.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block; /*se fosse so inline nao permitiria ajuste de altura e lagura */
+}
+
+.cabecalho {
+    background-color: var(--branco);
+    display: flex; /*tranformou o cabecalho em um flex container e os filhos viraram flex items*/
+    justify-content: space-between; /*separa cada div no mesmo espaco entre eles*/
+    align-items: center;
+    position: relative;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.container-imagem {
+    padding: 1em;
+}
+
+.lista-menu {
+    display: none; /*desaparece o elemento*/
+    position: absolute;
+    top: 100%;
+    width: 50vw; /*pega a largura da tela*/
+}
+
+.container-botao:checked ~ .lista-menu { /*maneira mais proxima de chegar em uma condicional*/
+    display: block;
+}
+
+.lista-menu-titulo,
+.lista-menu-item {
+    padding: 1em;
+    background-color: var(--branco);
+}
+
+.lista-menu-titulo {
+    color: #EB9B00;
+    font-weight: 700;
+}
+
+.lista-menu-link {
+    background: linear-gradient(97.54deg, #002F52 35.49%, #326589 165.37%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    text-transform: uppercase;
+}
+
+.container-botao {
+    display: none; /*desaparece com o checkbox*/
+}
+
+.container-titulo,
+.opcoes {
+    display: none;
+}
+
+.container-texto {
+    display: none;
+}
+
+@media screen and (min-width: 1024px) {
+    .container-titulo,
+    .container-titulo-negrito {
+        font-family: var(--fonte-secundaria);
+        font-size: 30px;
+    }
+
+    .container-titulo {
+        font-weight: 400;
+        display: block;
+    }
+
+    .container-titulo-negrito {
+        font-weight: 700;
+    }
+
+    .opcoes {
+        display: flex;
+    }
+
+    .opcoes-items {
+        padding: 1em;
+        text-transform: uppercase;
+    }
+
+    .opcoes-link {
+        text-decoration: none;
+        color: var(--preto);
+    }
+
+    .container-imagem-transparente,
+    .cabecalho__menu-hamburguer {
+        display: none;
+    }
+
+    .opcoes-botao:checked ~ .lista-menu {
+        display: block;
+        width: auto;
+    }
+
+    .opcoes-botao {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1728px) {
+    .container-link {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: var(--preto);
+    }
+
+    .cabecalho {
+        padding: 0 2em;
+    }
+
+    .opcoes {
+        margin-right: auto;
+    }
+
+    .container-texto {
+        display: block;
+    }
+}
